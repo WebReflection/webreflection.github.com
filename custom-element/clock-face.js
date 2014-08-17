@@ -2,7 +2,7 @@
  *  original clock-face code from: http://developer.telerik.com/featured/web-components-ready-production/
  *  this is just a readpated version for restyle.customElement
  */
-var ClockFace = restyle.customElement(
+restyle.customElement(
   'clock-face',
   HTMLElement,
   {
@@ -53,10 +53,10 @@ var ClockFace = restyle.customElement(
       }
     },
     createdCallback: function () {
-      if (!ClockFace.i) ClockFace.i = 0;
+      if (!this.constructor.i) this.constructor.i = 0;
 
       // unique class or id
-      this.className = 'i' + ClockFace.i++;
+      this.className = 'i' + this.constructor.i++;
       // create a prefixed component Restyle object
       // this will allow updates via CSS later on for this
       // component only, overwriting the .css property inherited
