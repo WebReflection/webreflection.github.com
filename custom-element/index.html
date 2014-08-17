@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>&copy; custom-element</title>
+        <meta http-equiv="content-language" content="en-US">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,minimal-ui">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <script
+          src="https://raw.githubusercontent.com/WebReflection/document-register-element/master/build/document-register-element.js"
+        >/* polyfills must be loaded upfront */</script>
+        <script
+          src="https://raw.githubusercontent.com/WebReflection/restyle/master/build/restyle.js"
+        >/* dependencies should be available too */</script>
+        <script async
+          src="clock-face.js"
+        >/* now we can go as fancy as we want loading components */</script>
+    </head>
+    <body>
+      <h3>dynamic</h3>
+      <clock-face></clock-face>
+      <h3>fixed</h3>
+      <clock-face hour="10" minute="10" second="30"></clock-face>
+    </body>
+</html>
