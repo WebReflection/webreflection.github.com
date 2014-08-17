@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head><title></title></head>
+  <body>
+    <x-e>must be initialized async</x-e>
+    <script>
+    // imagine I have removed that setTimeout
+    var XE = document.registerElement(
+      'x-e',
+      {
+        prototype: Object.create(
+          HTMLElement.prototype, {
+          createdCallback: {value: function() {
+            // will be undefined because
+            // XE hasn't been assigned yet
+            alert(this.constructor === XE);
+          }}
+        })
+      }
+    );
+
+    // now if we do this instead
+    document.body.appendChild(
+      document.createElement('x-e')
+    );
+    // now it alerted `true` instead
+    </script>
+  </body>
+</html>
