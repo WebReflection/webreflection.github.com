@@ -74,9 +74,10 @@ restyle.customElement(
 
       this.updateClock();
       if ( !this.hour && !this.minute && !this.second  ) {
-        setInterval(function(self) {
+        var self = this;
+        setInterval(function() {
           self.updateClock();
-        }, 1000, this);
+        }, 1000);
       }
     },
     readAttributes: function() {
